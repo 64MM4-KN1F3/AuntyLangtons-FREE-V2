@@ -746,22 +746,20 @@ struct ModuleDisplay : Widget, Logos {
 		}
 	}
 	
-	/* mousePos not available in Rack2 SDK
 	void onDragStart(const event::DragStart &e) override {
 		if(module) {
-			dragX = APP->scene->rack->mousePos.x;
-			dragY = APP->scene->rack->mousePos.y;
+			dragX = APP->scene->rack->getMousePos().x;
+			dragY = APP->scene->rack->getMousePos().y;
 		}
 	}
 
 	void onDragMove(const event::DragMove &e) override {
-		float newDragX = APP->scene->rack->mousePos.x;
-		float newDragY = APP->scene->rack->mousePos.y;
+		float newDragX = APP->scene->rack->getMousePos().x;
+		float newDragY = APP->scene->rack->getMousePos().y;
 		if(module) {
 			module->setCellOnByDisplayPos(initX+(newDragX-dragX), initY+(newDragY-dragY), currentlyTurningOn);
 		}
 	}
-	*/
 
 	void draw(const DrawArgs &draw) override {
 
