@@ -124,8 +124,9 @@ struct MusicalInstruction {
 };
 
 ////////////////////////////////////////////// LABELS //////////////////////////////////////////////
-
-struct CenteredLabel : Widget {
+// TODO Font not working in V2 - causing warns/errors loading font in Ubuntu
+/*s
+truct CenteredLabel : Widget {
 	std::string text;
 	std::string fontPath = "res/DSEG7ClassicMini-Regular.ttf";
 	int fontSize;
@@ -147,11 +148,13 @@ struct CenteredLabel : Widget {
 		}
 	}
 };
+*/
 
 ////////////////////////////////////////////// KNOBS //////////////////////////////////////////////
 
 struct RoundSmallBlackKnobSnap : RoundSmallBlackKnob {
-	CenteredLabel* linkedLabel = NULL;
+	// Fix CenteredLabel
+	// CenteredLabel* linkedLabel = NULL;
 	Module* linkedModule = NULL;
 	ParamQuantity* paramQuantity = getParamQuantity();
 
@@ -160,7 +163,8 @@ struct RoundSmallBlackKnobSnap : RoundSmallBlackKnob {
     	snap = true;
     }
 
-    void connectLabel(CenteredLabel* label, Module* module) {
+    /*
+	void connectLabel(CenteredLabel* label, Module* module) {
 		if(label && module) {
 			linkedLabel = label;
 			linkedModule = module;
@@ -169,12 +173,15 @@ struct RoundSmallBlackKnobSnap : RoundSmallBlackKnob {
 			}
 		}
 	}
+	*/
 
 	void onChange(const event::Change &e) override {
 		RoundSmallBlackKnob::onChange(e);
+		/*
 		if (linkedModule && linkedLabel) {
 			linkedLabel->text = formatCurrentValue();
 		}
+		*/
 	}
 
     std::string formatCurrentValue() {

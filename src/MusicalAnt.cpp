@@ -901,8 +901,9 @@ struct MusicalAntWidget : ModuleWidget {
 		addChild(createWidget<ScrewBlack>(Vec(0, 365)));
 		addChild(createWidget<ScrewBlack>(Vec(box.size.x - 15, 365)));
 
-		CenteredLabel* const dynamicLabel = new CenteredLabel;
-		dynamicLabel->box.pos = Vec(75, 182.2);
+		// TODO Label not working in V2 (causing warning in Ubuntu)
+		// CenteredLabel* const dynamicLabel = new CenteredLabel;
+		// dynamicLabel->box.pos = Vec(75, 182.2);
 
 		addParam(createParam<RoundBlackKnob>(Vec(143.9, 177), module, MusicalAnt::CLOCK_PARAM));
 
@@ -975,7 +976,8 @@ struct MusicalAntWidget : ModuleWidget {
 		// Poly V/Oct out
 		addOutput(createOutput<PJ301MPort>(Vec(23, 341.25), module, MusicalAnt::VOCT_OUTPUT_POLY_OUTPUT));
 		
-		
+		// TODO Fix dynamic label
+		/*
 		octaveKnobX->connectLabel(dynamicLabel, module);
 		noteKnobX->connectLabel(dynamicLabel, module);
 		scaleKnobX->connectLabel(dynamicLabel, module);
@@ -995,9 +997,11 @@ struct MusicalAntWidget : ModuleWidget {
 		loopLengthKnob->connectLabel(dynamicLabel, module);
 		sideLengthKnob->connectLabel(dynamicLabel, module);
 		skipParamKnob->connectLabel(dynamicLabel, module);
+		
 
 		addChild(dynamicLabel);
-
+		*/
+		
 		addParam(octaveKnobX);
 		addParam(noteKnobX);
 		addParam(scaleKnobX);
