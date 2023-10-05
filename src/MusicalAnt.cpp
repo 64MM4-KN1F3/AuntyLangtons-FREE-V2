@@ -23,6 +23,7 @@ Jeremy Wentworth of JW Modules - http://jeremywentworth.com
 .. for providing the open source structure to build upon.
 */
 
+// TODO 2 - update Loop length number to display X + 2? (when number == 2 I'm seeing 4 steps)
 // TODO 3 - Try dual outputs for one axis using a shepard tone
 // TODO 4 - Add a splash screen for when the pluginInstance is initialized (done) and then remove it.
 // TODO 5 (done) - X or Y out only fires if ant is changing on that axis?
